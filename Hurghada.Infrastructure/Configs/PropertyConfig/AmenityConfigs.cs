@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Hurghada.Infrastructure.Configs
+namespace Hurghada.Infrastructure.Configs.PropertyConfig
 {
     public class AmenityConfigs : IEntityTypeConfiguration<Amenity>
     {

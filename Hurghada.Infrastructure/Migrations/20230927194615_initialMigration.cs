@@ -2,10 +2,12 @@
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace Hurghada.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class initialMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -101,6 +103,57 @@ namespace Hurghada.Infrastructure.Migrations
                         principalTable: "Properties",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.InsertData(
+                schema: "Property",
+                table: "Amenities",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Air conditioning" },
+                    { 2, "Balcony" },
+                    { 4, "Cable TV" },
+                    { 5, "Cleaning after exit" },
+                    { 6, "Cofee pot" },
+                    { 7, "Computer" },
+                    { 8, "Cot" },
+                    { 11, "Fan" },
+                    { 12, "Kitchen Appliances" },
+                    { 13, "Swimming bool" },
+                    { 14, "Wifi" },
+                    { 15, "Landline" },
+                    { 16, "Parking" },
+                    { 17, "Pets allowed" },
+                    { 18, "Garden" },
+                    { 19, "Gym" },
+                    { 20, "BeachAcess" },
+                    { 21, "Security" },
+                    { 22, "Elevator" }
+                });
+
+            migrationBuilder.InsertData(
+                schema: "Property",
+                table: "PropertyTypes",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Apartment" },
+                    { 2, "Villa" },
+                    { 3, "Chalet" },
+                    { 4, "Studio" },
+                    { 5, "Duplex" },
+                    { 6, "Penthouse" },
+                    { 7, "Townhouse" },
+                    { 8, "Twin House" },
+                    { 9, "Cabin" },
+                    { 10, "Building" },
+                    { 11, "Farm House" },
+                    { 12, "Chalet" },
+                    { 13, "Hotel" },
+                    { 14, "Resort" },
+                    { 15, "House" },
+                    { 16, "Flat" }
                 });
 
             migrationBuilder.CreateIndex(

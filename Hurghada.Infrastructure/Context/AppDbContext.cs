@@ -1,4 +1,5 @@
 ﻿using Hurghada.Domain.Entities.Property;
+using Hurghada.Domain.Entities.TourGuide;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -18,6 +19,9 @@ namespace Hurghada.Infrastructure.Context
 
         public DbSet<Amenity> Amenities { get; set; }
         public DbSet<PropertyAmenity> PropertyAmenities { get; set; }
+        public DbSet<Guide> Guides { get; set; }
+        public DbSet<GuideLanguage> GuideLanguages { get; set; }
+        public DbSet<Language> Language { get; set; }
         #endregion
         #region Methods
         protected override void OnModelCreating(ModelBuilder modelBuilder)

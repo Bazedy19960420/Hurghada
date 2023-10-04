@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Hurghada.Infrastructure.Configs
+namespace Hurghada.Infrastructure.Configs.PropertyConfig
 {
     public class PropertyConfigs : IEntityTypeConfiguration<Property>
     {
@@ -12,7 +12,7 @@ namespace Hurghada.Infrastructure.Configs
             builder.HasMany(p => p.PropertyAmenities)
                 .WithOne(pa => pa.Property)
                 .HasForeignKey(pa => pa.PropertyId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasOne(p => p.PropertyType)
                 .WithMany(pt => pt.Properties)
